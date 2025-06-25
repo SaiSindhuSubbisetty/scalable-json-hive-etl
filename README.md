@@ -1,91 +1,67 @@
----
-
-### ✅ 1. Create a New GitHub Repository
-
-1. Go to [https://github.com](https://github.com)
-2. Click **"New Repository"**
-3. Enter:
-
-   * **Repository name**: `scalable-json-hive-etl`
-   * **Public** or **Private**
-   * (✅ Optional) Add a `README.md` if you haven't already
-4. Click **Create repository**
 
 ---
 
-### ✅ 2. Push Code from Your Local System
+### 🔷 Scalable JSON Hive ETL using PySpark
 
-Assuming your project is in:
+This project demonstrates a simple and scalable **ETL (Extract, Transform, Load)** pipeline built with **Apache Spark 4.0.0** using **PySpark**. It reads **JSON files**, processes the data using Spark DataFrames, and writes the output into **Parquet** format, suitable for further analysis or loading into **Apache Hive**.
+
+---
+
+### 📌 Features
+
+* 🔹 Reads JSON data using PySpark
+* 🔹 Parses and displays structured data
+* 🔹 Writes output in optimized **Parquet** format
+* 🔹 Prepares data for Hive ingestion
+* 🔹 Built with **Spark 4.0.0**, compatible with Hadoop ecosystem
+
+---
+
+### 📂 Folder Structure
 
 ```
-C:\Users\saut7\IdeaProjects\scalable-json-hive-etl
-```
-
-Open your terminal and run:
-
-```bash
-cd C:\Users\saut7\IdeaProjects\scalable-json-hive-etl
-```
-
-Initialize Git:
-
-```bash
-git init
-```
-
-Add all files:
-
-```bash
-git add .
-```
-
-Commit them:
-
-```bash
-git commit -m "Initial commit: Spark4 ETL Project"
-```
-
-Connect to GitHub (replace `<your-username>` with your actual GitHub username):
-
-```bash
-git remote add origin https://github.com/<your-username>/scalable-json-hive-etl.git
-```
-
-Push to GitHub:
-
-```bash
-git push -u origin master
-```
-
-> ❗ If you created a repo with `main` as the default branch, use:
-
-```bash
-git push -u origin main
+scalable-json-hive-etl/
+│
+├── data/                      # Input JSON data
+│   └── sample.json
+│
+├── etl/                       # ETL Python scripts
+│   └── spark_etl.py
+│
+├── warehouse/                # Output Parquet files (auto-created)
+│
+├── README.md                 # Project description
+└── requirements.txt          # Python dependencies
 ```
 
 ---
 
-### ✅ 3. Confirm
+### 🚀 Run Locally
 
-Go to your GitHub repo page — you should now see all your files pushed!
+1. Set up virtual environment and install dependencies:
+
+   ```bash
+   python -m venv .venv
+   .venv\Scripts\activate
+   pip install pyspark
+   ```
+
+2. Run the ETL script:
+
+   ```bash
+   python etl/spark_etl.py
+   ```
+
+3. Output will be stored in `warehouse/output_parquet/`.
 
 ---
 
-### 💡 Optional: Add `.gitignore`
+### 📄 Sample Input (`data/sample.json`)
 
-If you want to exclude virtual envs and compiled files, create a `.gitignore` in the root folder with:
-
-```gitignore
-.venv/
-__pycache__/
-*.pyc
-warehouse/
+```json
+[
+  {"id": 1, "city": "Bangalore"},
+  {"id": 2, "city": "Hyderabad"}
+]
 ```
 
-Then:
-
-```bash
-git add .gitignore
-git commit -m "Add .gitignore"
-git push
-```
