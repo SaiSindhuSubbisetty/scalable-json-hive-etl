@@ -1,0 +1,5 @@
+[
+  {"user_id": 1, "city": "Delhi", "activity": "login"},
+  {"user_id": 2, "city": "Mumbai", "activity": "purchase"},
+  {"user_id": 3, "city": "Chennai", "activity": "browse"}
+]
